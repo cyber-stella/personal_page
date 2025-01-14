@@ -3,19 +3,19 @@ import ProjectCard from './ProjectCard'
 const projects = [
   {
     title: 'Tracking POO POO',
-    image: '/personal_page/projects/poopoo.webp',
+    image: '/projects/poopoo.webp',
     technologies: 'HTML / CSS / Python',
     link: 'https://github.com/yourusername/poopoo'
   },
   {
     title: 'FoodSilo',
-    image: '/personal_page/projects/foodsilo.jpeg',
+    image: '/projects/foodsilo.jpeg',
     technologies: 'React / Tailwind / Next.js',
     link: 'https://github.com/yourusername/foodsilo'
   },
   {
     title: 'YOLO-8',
-    image: '/personal_page/projects/yolo.webp',
+    image: '/projects/yolo.webp',
     technologies: 'JavaScript / Flask / YOLOv8 / Jenkins',
     link: 'https://github.com/yourusername/yolo-8'
   }
