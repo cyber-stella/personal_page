@@ -2,6 +2,7 @@
   "name": "personal-page",
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://cyber-stella.github.io/personal_page/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

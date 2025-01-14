@@ -1,4 +1,5 @@
 import { HiOutlineDocumentText } from 'react-icons/hi'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 const Profile = () => {
   const openResume = () => {
@@ -38,13 +39,13 @@ const Profile = () => {
       </div>
       <div className="flex justify-center space-x-6 min-w-[200px]">
         <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 hover:-translate-y-1 dark:hover:text-white transition-colors">
-          <i className="fas fa-envelope text-xl md:text-2xl"></i>
+          <FaEnvelope />
         </a>
         <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 hover:-translate-y-1 dark:hover:text-white transition-colors">
-          <i className="fab fa-github text-xl md:text-2xl"></i>
+          <FaGithub />
         </a>
         <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 hover:-translate-y-1 dark:hover:text-white transition-colors">
-          <i className="fab fa-linkedin text-xl md:text-2xl"></i>
+          <FaLinkedin />
         </a>
       </div>
     </div>
