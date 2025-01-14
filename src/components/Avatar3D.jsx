@@ -10,7 +10,7 @@ function Model() {
   const { viewport } = useThree()
 
   // 将 useGLTF 移到 try 块外面，确保 hooks 调用顺序一致
-  const { scene } = useGLTF('/models/avatar.glb', true)
+  const { scene } = useGLTF('/personal_page/models/avatar.glb', true)
 
   // 改进鼠标交互效果
   useFrame((state) => {
@@ -172,6 +172,6 @@ const Avatar3D = () => {
   )
 }
 
-useGLTF.preload('/models/avatar.glb')
+useGLTF.preload('/personal_page/models/avatar.glb')
 
 export default Avatar3D 
