@@ -33,11 +33,26 @@ jobs:
         npm install -g npm@latest
         npm ci
 
+    - name: Debug public directory
+      run: |
+        echo "Content of public directory:"
+        ls -la public/
+        echo "Content of public/models:"
+        ls -la public/models/
+        echo "Content of public/projects:"
+        ls -la public/projects/
+        echo "Content of public/photo:"
+        ls -la public/photo/
+
     - name: Build
       run: npm run build
 
-    - name: List build output
-      run: ls -la dist
+    - name: Debug build output
+      run: |
+        echo "Content of dist directory:"
+        ls -la dist/
+        echo "Content of dist/assets:"
+        ls -la dist/assets/
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
@@ -63,7 +78,23 @@ jobs:
 
     - name: Copy public directory
       run: |
-        cp -r public/* dist/
+        mkdir -p dist/models dist/projects dist/photo
+        cp -r public/models/* dist/models/
+        cp -r public/projects/* dist/projects/
+        cp -r public/photo/* dist/photo/
+        cp public/resume.pdf dist/
+        cp public/logo.png dist/
+
+    - name: Debug final dist directory
+      run: |
+        echo "Final content of dist directory:"
+        ls -la dist/
+        echo "Content of dist/models:"
+        ls -la dist/models/
+        echo "Content of dist/projects:"
+        ls -la dist/projects/
+        echo "Content of dist/photo:"
+        ls -la dist/photo/
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
