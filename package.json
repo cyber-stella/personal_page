@@ -1,11 +1,15 @@
 {
   "name": "personal-page",
+  "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://cyber-stella.github.io/personal_page/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
