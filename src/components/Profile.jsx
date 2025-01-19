@@ -26,7 +26,7 @@ const Profile = () => {
       
       <div className="min-w-[200px] flex justify-center">
         <a
-          href="/resume.pdf"
+          href="/personal_page/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center px-6 py-3 rounded-lg bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold
