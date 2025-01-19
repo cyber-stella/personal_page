@@ -35,42 +35,41 @@ const Profile = () => {
       </div>
 
       <div className="flex justify-center space-x-8 min-w-[200px]">
-        <SocialLink 
-          href="mailto:systellade@gmail.com"
-          icon={<FaEnvelope />}
-          label="Email"
-        />
-        <SocialLink 
-          href="https://github.com/cyber-stella"
-          icon={<FaGithub />}
-          label="GitHub"
-        />
-        <SocialLink 
-          href="https://www.linkedin.com/in/stella-chen-49b89a24b"
-          icon={<FaLinkedin />}
-          label="LinkedIn"
-        />
+        <a 
+          href="mailto:systellade@gmail.com" 
+          className="group relative"
+          aria-label="Email"
+        >
+          <div className="p-2">
+            <FaEnvelope className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 ease-out group-hover:text-gray-900 dark:group-hover:text-white" />
+          </div>
+          <span className="absolute -bottom-1 left-1/2 w-0 h-[2px] bg-gray-900 dark:bg-white transition-all duration-300 ease-out -translate-x-1/2 group-hover:w-full" />
+        </a>
+
+        <a 
+          href="https://github.com/cyber-stella" 
+          className="group relative"
+          aria-label="GitHub"
+        >
+          <div className="p-2">
+            <FaGithub className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 ease-out group-hover:text-gray-900 dark:group-hover:text-white" />
+          </div>
+          <span className="absolute -bottom-1 left-1/2 w-0 h-[2px] bg-gray-900 dark:bg-white transition-all duration-300 ease-out -translate-x-1/2 group-hover:w-full" />
+        </a>
+
+        <a 
+          href="https://www.linkedin.com/in/stella-chen-49b89a24b" 
+          className="group relative"
+          aria-label="LinkedIn"
+        >
+          <div className="p-2">
+            <FaLinkedin className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 ease-out group-hover:text-gray-900 dark:group-hover:text-white" />
+          </div>
+          <span className="absolute -bottom-1 left-1/2 w-0 h-[2px] bg-gray-900 dark:bg-white transition-all duration-300 ease-out -translate-x-1/2 group-hover:w-full" />
+        </a>
       </div>
     </div>
   )
 }
-
-// 抽取社交链接组件，减少重复代码
-const SocialLink = ({ href, icon, label }) => (
-  <a 
-    href={href} 
-    className="group transform-gpu"
-    aria-label={label}
-  >
-    <div className="relative p-2 transition-transform duration-300 ease-out hover:scale-110">
-      <div className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
-        {icon}
-      </div>
-      <div className="absolute inset-x-0 -bottom-1 flex justify-center">
-        <div className="h-0.5 w-0 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
-      </div>
-    </div>
-  </a>
-)
 
 export default Profile 

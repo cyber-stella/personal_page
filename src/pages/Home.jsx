@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 const Home = () => {
   return (
     <div className="animate-fade-in">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-20 lg:gap-80">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-20 lg:gap-40">
         <div className="lg:w-1/2 flex justify-end">
           <Profile />
         </div>
