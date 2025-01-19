@@ -19,9 +19,9 @@ const Profile = () => {
       
       <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed min-w-[200px]">
         ENTJ;<br />
-        Web Developer;<br />
+        Tech Enthusiast;<br />
         Amateur Photographer;<br />
-        Life Lover.
+        Life Explorer.
       </p>
       
       <div className="min-w-[200px] flex justify-center">
@@ -40,27 +40,41 @@ const Profile = () => {
       <div className="flex justify-center space-x-8 min-w-[200px]">
         <a 
           href="mailto:systellade@gmail.com" 
-          className="group relative p-2 hover:scale-110 transition-all duration-300 ease-out"
+          className="group transform-gpu"
           aria-label="Email"
         >
-          <FaEnvelope className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300" />
-          <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 dark:bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative p-2 transition-transform duration-300 ease-out hover:scale-110">
+            <FaEnvelope className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <div className="absolute inset-x-0 -bottom-1 flex justify-center">
+              <div className="h-0.5 w-0 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
+            </div>
+          </div>
         </a>
+        
         <a 
           href="https://github.com/cyber-stella" 
-          className="group relative p-2 hover:scale-110 transition-all duration-300 ease-out"
+          className="group transform-gpu"
           aria-label="GitHub"
         >
-          <FaGithub className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300" />
-          <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 dark:bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative p-2 transition-transform duration-300 ease-out hover:scale-110">
+            <FaGithub className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <div className="absolute inset-x-0 -bottom-1 flex justify-center">
+              <div className="h-0.5 w-0 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
+            </div>
+          </div>
         </a>
+        
         <a 
           href="https://www.linkedin.com/in/stella-chen-49b89a24b" 
-          className="group relative p-2 hover:scale-110 transition-all duration-300 ease-out"
+          className="group transform-gpu"
           aria-label="LinkedIn"
         >
-          <FaLinkedin className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300" />
-          <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 dark:bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative p-2 transition-transform duration-300 ease-out hover:scale-110">
+            <FaLinkedin className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <div className="absolute inset-x-0 -bottom-1 flex justify-center">
+              <div className="h-0.5 w-0 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
+            </div>
+          </div>
         </a>
       </div>
     </div>
