@@ -17,7 +17,6 @@ const Home = () => {
       </div>
       <Projects />
       <Gallery />
-      <Footer />
     </div>
   )
 }
