@@ -2,10 +2,6 @@ import { HiOutlineDocumentText } from 'react-icons/hi'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 const Profile = () => {
-  const openResume = () => {
-    window.open('resume.pdf', '_blank')
-  }
-
   return (
     <div className="text-center space-y-6 w-full lg:w-auto flex-shrink-0 min-w-[300px]">
       <div className="min-w-full">
@@ -37,48 +33,44 @@ const Profile = () => {
           Resume
         </a>
       </div>
+
       <div className="flex justify-center space-x-8 min-w-[200px]">
-        <a 
-          href="mailto:systellade@gmail.com" 
-          className="group transform-gpu"
-          aria-label="Email"
-        >
-          <div className="relative p-2 transition-transform duration-300 ease-out hover:scale-110">
-            <FaEnvelope className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white" />
-            <div className="absolute inset-x-0 -bottom-1 flex justify-center">
-              <div className="h-0.5 w-0 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
-            </div>
-          </div>
-        </a>
-        
-        <a 
-          href="https://github.com/cyber-stella" 
-          className="group transform-gpu"
-          aria-label="GitHub"
-        >
-          <div className="relative p-2 transition-transform duration-300 ease-out hover:scale-110">
-            <FaGithub className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white" />
-            <div className="absolute inset-x-0 -bottom-1 flex justify-center">
-              <div className="h-0.5 w-0 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
-            </div>
-          </div>
-        </a>
-        
-        <a 
-          href="https://www.linkedin.com/in/stella-chen-49b89a24b" 
-          className="group transform-gpu"
-          aria-label="LinkedIn"
-        >
-          <div className="relative p-2 transition-transform duration-300 ease-out hover:scale-110">
-            <FaLinkedin className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white" />
-            <div className="absolute inset-x-0 -bottom-1 flex justify-center">
-              <div className="h-0.5 w-0 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
-            </div>
-          </div>
-        </a>
+        <SocialLink 
+          href="mailto:systellade@gmail.com"
+          icon={<FaEnvelope />}
+          label="Email"
+        />
+        <SocialLink 
+          href="https://github.com/cyber-stella"
+          icon={<FaGithub />}
+          label="GitHub"
+        />
+        <SocialLink 
+          href="https://www.linkedin.com/in/stella-chen-49b89a24b"
+          icon={<FaLinkedin />}
+          label="LinkedIn"
+        />
       </div>
     </div>
   )
 }
+
+// 抽取社交链接组件，减少重复代码
+const SocialLink = ({ href, icon, label }) => (
+  <a 
+    href={href} 
+    className="group transform-gpu"
+    aria-label={label}
+  >
+    <div className="relative p-2 transition-transform duration-300 ease-out hover:scale-110">
+      <div className="w-6 h-6 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+        {icon}
+      </div>
+      <div className="absolute inset-x-0 -bottom-1 flex justify-center">
+        <div className="h-0.5 w-0 bg-gray-900 dark:bg-white transition-all duration-300 group-hover:w-full" />
+      </div>
+    </div>
+  </a>
+)
 
 export default Profile 

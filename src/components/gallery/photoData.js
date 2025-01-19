@@ -1,3 +1,4 @@
+/** @type {{ id: number; src: string; }[]} */
 const photos = [
   {
     id: 1,

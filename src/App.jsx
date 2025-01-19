@@ -1,24 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
 
 function App() {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  )
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDark(true)
-      document.documentElement.classList.add('dark')
-    }
-  }, [])
-
-  const toggleTheme = () => {
-    setIsDark(!isDark)
-    document.documentElement.classList.toggle('dark')
-  }
+    document.documentElement.classList.toggle('dark', isDark)
+  }, [isDark])
 
   return (
-    <MainLayout isDark={isDark} toggleTheme={toggleTheme}>
+    <MainLayout isDark={isDark} toggleTheme={() => setIsDark(!isDark)}>
       <Home />
     </MainLayout>
   )

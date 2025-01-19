@@ -83,6 +83,18 @@ function Loader() {
   )
 }
 
+const Lighting = () => (
+  <>
+    <ambientLight intensity={4.0} />
+    <directionalLight position={[0, 1, 5]} intensity={5.0} castShadow />
+    <spotLight position={[0, 0.5, 4]} intensity={4.0} angle={0.6} penumbra={0.3} color="#ffffff" />
+    <directionalLight position={[-2, 1, 3]} intensity={3.0} color="#ffffff" />
+    <directionalLight position={[2, 1, 3]} intensity={3.0} color="#ffffff" />
+    <pointLight position={[0, 2, 3]} intensity={3.0} color="#ffffff" distance={10} />
+    <pointLight position={[0, -0.5, 3]} intensity={2.0} color="#ffffff" distance={8} />
+  </>
+)
+
 const Avatar3D = () => {
   return (
     <div className="w-[800px] h-[800px] relative">
@@ -97,53 +109,7 @@ const Avatar3D = () => {
           background: 'transparent',
         }}
       >
-        {/* 增强环境光照 */}
-        <ambientLight intensity={4.0} />
-        
-        {/* 增强主光源 */}
-        <directionalLight 
-          position={[0, 1, 5]}  // 降低高度，更直接照射脸部
-          intensity={5.0}       // 增加强度
-          castShadow
-        />
-        
-        {/* 加强面部专用光源 */}
-        <spotLight 
-          position={[0, 0.5, 4]}  // 更靠近脸部
-          intensity={4.0}         // 增加强度
-          angle={0.6}             // 扩大照射角度
-          penumbra={0.3}          // 减小边缘柔和度使光照更集中
-          color="#ffffff"
-        />
-        
-        {/* 调整填充光 */}
-        <directionalLight 
-          position={[-2, 1, 3]}   // 调整位置更靠近脸部
-          intensity={3.0}         // 增加强度
-          color="#ffffff" 
-        />
-        
-        <directionalLight 
-          position={[2, 1, 3]}    // 调整位置更靠近脸部
-          intensity={3.0}         // 增加强度
-          color="#ffffff" 
-        />
-        
-        {/* 增强顶部点光源 */}
-        <pointLight 
-          position={[0, 2, 3]}    // 降低高度
-          intensity={3.0}         // 增加强度
-          color="#ffffff"
-          distance={10}           // 增加照射距离
-        />
-
-        {/* 加强下方补光 */}
-        <pointLight 
-          position={[0, -0.5, 3]} // 调整位置更靠近脸部
-          intensity={2.0}         // 增加强度
-          color="#ffffff"
-          distance={8}            // 增加照射距离
-        />
+        <Lighting />
 
         <Suspense fallback={<Loader />}>
           <Model />
