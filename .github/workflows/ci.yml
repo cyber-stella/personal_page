@@ -1,4 +1,4 @@
-name: CI/CD
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -10,93 +10,34 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    strategy:
-      matrix:
-        node-version: [22.x]
 
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
 
-    - name: Install dependencies
-      run: |
-        npm install -g npm@latest
-        npm ci
+      - name: Install Dependencies
+        run: npm ci
 
-    - name: Debug public directory
-      run: |
-        echo "Content of public directory:"
-        ls -la public/
-        echo "Content of public/models:"
-        ls -la public/models/
-        echo "Content of public/projects:"
-        ls -la public/projects/
-        echo "Content of public/photo:"
-        ls -la public/photo/
+      - name: Build
+        run: npm run build
 
-    - name: Build
-      run: npm run build
+      - name: List build output
+        run: |
+          echo "Build output:"
+          ls -R dist/
 
-    - name: Debug build output
-      run: |
-        echo "Content of dist directory:"
-        ls -la dist/
-        echo "Content of dist/assets:"
-        ls -la dist/assets/
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-files
-        path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    permissions:
-      contents: write
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: build-files
-        path: dist
-
-    - name: Copy public directory
-      run: |
-        mkdir -p dist/models dist/projects dist/photo
-        cp -r public/models/* dist/models/
-        cp -r public/projects/* dist/projects/
-        cp -r public/photo/* dist/photo/
-        cp public/logo.png dist/
-
-    - name: Debug final dist directory
-      run: |
-        echo "Final content of dist directory:"
-        ls -la dist/
-        echo "Content of dist/models:"
-        ls -la dist/models/
-        echo "Content of dist/projects:"
-        ls -la dist/projects/
-        echo "Content of dist/photo:"
-        ls -la dist/photo/
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist 
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          clean: true 

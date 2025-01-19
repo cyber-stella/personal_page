@@ -37,15 +37,30 @@ const Profile = () => {
           Resume
         </a>
       </div>
-      <div className="flex justify-center space-x-6 min-w-[200px]">
-        <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 hover:-translate-y-1 dark:hover:text-white transition-colors">
-          <FaEnvelope />
+      <div className="flex justify-center space-x-8 min-w-[200px]">
+        <a 
+          href="mailto:systellade@gmail.com" 
+          className="group relative p-2 hover:scale-110 transition-all duration-300 ease-out"
+          aria-label="Email"
+        >
+          <FaEnvelope className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300" />
+          <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 dark:bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </a>
-        <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 hover:-translate-y-1 dark:hover:text-white transition-colors">
-          <FaGithub />
+        <a 
+          href="https://github.com/cyber-stella" 
+          className="group relative p-2 hover:scale-110 transition-all duration-300 ease-out"
+          aria-label="GitHub"
+        >
+          <FaGithub className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300" />
+          <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 dark:bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </a>
-        <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 hover:-translate-y-1 dark:hover:text-white transition-colors">
-          <FaLinkedin />
+        <a 
+          href="https://www.linkedin.com/in/stella-chen-49b89a24b" 
+          className="group relative p-2 hover:scale-110 transition-all duration-300 ease-out"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300" />
+          <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-900 dark:bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </a>
       </div>
     </div>
