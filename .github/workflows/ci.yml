@@ -82,7 +82,6 @@ jobs:
         cp -r public/models/* dist/models/
         cp -r public/projects/* dist/projects/
         cp -r public/photo/* dist/photo/
-        cp public/resume.pdf dist/
         cp public/logo.png dist/
 
     - name: Debug final dist directory
