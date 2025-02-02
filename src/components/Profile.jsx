@@ -14,7 +14,7 @@ const Profile = () => {
       </div>
       
       <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed min-w-[200px]">
-        ENTJ;<br />
+        Self-Driven;<br />
         Tech Enthusiast;<br />
         Amateur Photographer;<br />
         Life Explorer.
