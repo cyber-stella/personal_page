@@ -6,7 +6,7 @@ const Profile = () => {
     <div className="text-center space-y-6 w-full lg:w-auto flex-shrink-0 min-w-[300px]">
       <div className="min-w-full">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white whitespace-nowrap">
-          SIYU(STELLA) CHEN
+          SIYU(SYEIRA) CHEN
         </h1>
         <h2 className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mt-6">
           Graduate Student
